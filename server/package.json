@@ -1,0 +1,35 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "pm2 start ecosystem.config.json --no-daemon",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "inspect": "nodemon --inspect src/app.ts",
+    "test": "TS_NODE_FILES=true mocha",
+    "lint": "yarn run lint:js ",
+    "lint:eslint": "eslint --ignore-path .gitignore --ext .ts",
+    "lint:js": "yarn run lint:eslint src/",
+    "lint:fix": "yarn run lint:js -- --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "mongoose": "5.11.15",
+    "pm2": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "mocha-junit-reporter": "^2.0.0",
+    "nodemon": "^2.0.9",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
+}
