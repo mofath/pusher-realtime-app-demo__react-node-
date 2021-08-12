@@ -1,7 +1,12 @@
-import './App.css';
+import React from 'react';
+import SubscribeComponent from './SubscribeComponent';
 
 function App() {
-	return <div className='App'>App</div>;
+  return (
+    <div className='App'>
+      <SubscribeComponent />
+    </div>
+  );
 }
 
 export default App;
