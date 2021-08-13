@@ -1,7 +1,12 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
 const INITIAL_STATE = {
-  pusherClient: null,
+  setupPusherChannel: () => {
+    return {
+      channel: null,
+      pusherClient: null,
+    };
+  },
 };
 
 const PusherContext = createContext({ ...INITIAL_STATE });

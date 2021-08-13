@@ -9,10 +9,16 @@ const PusherContextProvider = (props) => {
     []
   );
 
+  const setupPusherChannel = (socketId) => {
+    const channel = pusherClient && pusherClient.subscribe(socketId);
+
+    return { channel, pusherClient };
+  };
+
   useEffect(() => () => pusherClient.disconnect(), [pusherClient]);
 
   return (
-    <PusherContext.Provider value={{ pusherClient }}>
+    <PusherContext.Provider value={{ setupPusherChannel }}>
       {props.children}
     </PusherContext.Provider>
   );
